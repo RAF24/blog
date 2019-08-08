@@ -2,12 +2,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PostComponent } from './post/post.component';
+import { PostlistComponent } from './postlist/postlist.component';
+import { PostlistitemComponent } from './postlistitem/postlistitem.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PostComponent
+    PostlistComponent,
+    PostlistitemComponent
   ],
   imports: [
     BrowserModule,

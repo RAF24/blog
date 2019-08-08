@@ -1,11 +1,11 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-post',
-  templateUrl: './post.component.html',
-  styleUrls: ['./post.component.scss']
+  selector: 'app-postlistitem',
+  templateUrl: './postlistitem.component.html',
+  styleUrls: ['./postlistitem.component.scss']
 })
-export class PostComponent implements OnInit {
+export class PostlistitemComponent implements OnInit {
 
   @Input() title: string = "";
   @Input() content: string;
@@ -17,14 +17,16 @@ export class PostComponent implements OnInit {
   constructor() { 
     this.datePost = new Date();
   }
+  
+
+  ngOnInit() {
+  }
 
 
   getDatePost(){
     return this.datePost;
   }
 
-  ngOnInit() {
-  }
 
   onLoveIt(){
     return this.loveIts++;
@@ -45,5 +47,9 @@ export class PostComponent implements OnInit {
     } 
     
   }
+
+
+
+  
 
 }
