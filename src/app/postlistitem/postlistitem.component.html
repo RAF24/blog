@@ -1,11 +1,11 @@
 <li [ngClass]="{'list-group-item' :true,
-                'list-group-item-success' : loveIts > 0,
-                'list-group-item-danger' : loveIts < 0}">
+                'list-group-item-success' : post.loveIts > 0,
+                'list-group-item-danger' : post.loveIts < 0}">
     <div class="titre">
-        <h4 [ngStyle]="{color : getColor()}">{{title}}</h4>
+        <h4 [ngStyle]="{color : getColor()}">{{post.title}}</h4>
         <p>{{getDatePost() | date : 'short'}}</p>
     </div>
-    <p>{{content}}</p>
+    <p>{{post.content}}</p>
     <div class="btnTest">
         <button class="btn btn-success" (click) = "onLoveIt()">love it</button>
         <button class="btn btn-danger"  (click) = "onDontLoveIt()">don't love it</button>

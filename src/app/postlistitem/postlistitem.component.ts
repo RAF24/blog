@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Post } from '../model/Post';
+import { post } from 'selenium-webdriver/http';
 
 @Component({
   selector: 'app-postlistitem',
@@ -7,15 +9,13 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class PostlistitemComponent implements OnInit {
 
-  @Input() title: string = "";
-  @Input() content: string;
-  @Input() loveIts: number;
-  @Input() created_at: Date;
+  @Input() post: Post;
+ 
 
   datePost : Date;
 
   constructor() { 
-    this.datePost = new Date();
+   this.datePost = new Date();
   }
   
 
@@ -24,23 +24,23 @@ export class PostlistitemComponent implements OnInit {
 
 
   getDatePost(){
-    return this.datePost;
+    return this.post.created_at = this.datePost;
   }
 
 
   onLoveIt(){
-    return this.loveIts++;
+    return this.post.loveIts++;
   }
 
   onDontLoveIt(){
-    return this.loveIts--;
+    return this.post.loveIts--;
   }
 
 
   getColor(){
-    if(this.loveIts < 0){
+    if(this.post.loveIts < 0){
       return 'red';
-    }else if(this.loveIts > 0){
+    }else if(this.post.loveIts > 0){
       return 'green';
     }else {
       return 'black';
